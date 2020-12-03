@@ -16,7 +16,7 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Swashbuckle;
-
+using MediatR;
 
 namespace Costo.WebApi
 {
@@ -37,6 +37,9 @@ namespace Costo.WebApi
 
             services.AddDbContext<CostoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                b => b.MigrationsAssembly("Costo.Infrastructure")));
+
+            services.AddMediatR(typeof(GetProjectEmployeesQuery).GetTypeInfo().Assembly);
+            services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin()));
 
             services.AddSwaggerGen(c =>
             {

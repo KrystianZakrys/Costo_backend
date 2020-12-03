@@ -26,5 +26,15 @@ namespace Costo.Domain.Entities
         /// Gets or sets sub categories
         /// </summary>
         public ICollection<TransactionCategory> SubCategories { get; protected set; }
+
+        public static TransactionCategory Create(string name, string description, Icon icon)
+        {
+            return new TransactionCategory()
+            {
+                Name = name,
+                Description = description,
+                Icon = icon
+            };
+        }
     }
 }
