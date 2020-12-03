@@ -1,6 +1,7 @@
 ﻿using Costo.Common.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Costo.Domain.Entities
@@ -20,6 +21,7 @@ namespace Costo.Domain.Entities
         /// <summary>
         /// Gets or sets balance.
         /// </summary>
+        [Column(TypeName = "money")]
         public Decimal Balance { get; protected set; } = 0;
         
         /// <summary>

@@ -12,9 +12,18 @@ namespace Costo.Infrastructure
         public DbSet<SavingsGoal> SavingsGoals { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<TransactionCategory> TransactionCategories { get; set; }
+
         public CostoContext(DbContextOptions options) : base(options)
         {
 
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        { 
         }
     }
 }

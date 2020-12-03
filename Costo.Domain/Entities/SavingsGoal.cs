@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Costo.Domain.Entities
@@ -19,11 +20,13 @@ namespace Costo.Domain.Entities
         /// <summary>
         /// Gets or sets goal value
         /// </summary>
+        [Column(TypeName = "money")]
         public Decimal GoalValue { get; protected set; }
 
         /// <summary>
         /// Gets or sets actual value
         /// </summary>
+        [Column(TypeName = "money")]
         public Decimal Value { get; protected set; }
     }
 }
