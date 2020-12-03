@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cost.Contracts\Cost.Contracts.csproj" />
+    <ProjectReference Include="..\Costo.CommandQuery\Costo.CommandQuery.csproj" />
     <ProjectReference Include="..\Costo.Infrastructure\Costo.Infrastructure.csproj" />
   </ItemGroup>
 
