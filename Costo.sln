@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Costo.CommandQuery", "Costo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cost.Contracts", "Cost.Contracts\Cost.Contracts.csproj", "{50553D9E-16D2-4206-8B5E-FF2A4F48A32E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Costo.Common", "Costo.Common\Costo.Common.csproj", "{84428F53-340B-48E9-95C9-273638FE66A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Costo.Common", "Costo.Common\Costo.Common.csproj", "{84428F53-340B-48E9-95C9-273638FE66A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
