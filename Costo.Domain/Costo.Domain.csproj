@@ -5,11 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Entities\BankAccount.cs~RF5bbec1.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Costo.Infrastructure\Costo.Infrastructure.csproj" />
+    <ProjectReference Include="..\Costo.Common\Costo.Common.csproj" />
   </ItemGroup>
 
 </Project>

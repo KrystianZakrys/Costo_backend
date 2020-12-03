@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Costo.Infrastructure.Common.Enums
+namespace Costo.Common.Enums
 {
     public enum Icon
     {

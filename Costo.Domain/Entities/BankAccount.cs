@@ -1,11 +1,11 @@
-﻿using Costo.Infrastructure.Common.Enums;
+﻿using Costo.Common.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Costo.Domain.Entities
 {
-    public class BankAccount : BaseEntity
+    public class BankAccount : SoftDeleteEntity
     {
         /// <summary>
         /// Gets or sets name.
@@ -20,7 +20,7 @@ namespace Costo.Domain.Entities
         /// <summary>
         /// Gets or sets balance.
         /// </summary>
-        public Decimal Balance { get; protected set; }
+        public Decimal Balance { get; protected set; } = 0;
         
         /// <summary>
         /// Gets or sets account type.
@@ -74,6 +74,39 @@ namespace Costo.Domain.Entities
             AccountType = accountType;
             Icon = Icon;
         }
+
+        /// <summary>
+        /// Soft deletes entity.
+        /// </summary>
+        public void Delete()
+        {
+            IsDeleted = true;
+        }
         
+        public void SetBalance(Decimal balance)
+        {
+            Balance = balance;
+        }
+
+        /// <summary>
+        /// Calculates actual bank account balance based on account transactions
+        /// </summary>
+        public decimal CalculateBalance()
+        {
+            decimal balance = Balance;
+            foreach (var transaction in Transactions)
+            {
+               if(transaction.TransactionType == TransactionType.Income)
+               {
+                   balance += transaction.Value;
+               }
+               else
+               {
+                   balance -= transaction.Value;
+               }
+            }
+            Balance = balance;
+            return balance;
+        }
     }
 }

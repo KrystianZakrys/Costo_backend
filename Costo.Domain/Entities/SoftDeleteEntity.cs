@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Costo.Domain.Entities
 {
-    class Wallet
+    public class SoftDeleteEntity : BaseEntity
     {
+        public bool IsDeleted { get; protected set; }
     }
 }

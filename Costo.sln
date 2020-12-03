@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Costo.WebApi", "Costo.WebApi\Costo.WebApi.csproj", "{C00EE554-EDB3-4DAA-8245-EF2806A82630}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Costo.WebApi", "Costo.WebApi\Costo.WebApi.csproj", "{C00EE554-EDB3-4DAA-8245-EF2806A82630}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Costo.Domain", "Costo.Domain\Costo.Domain.csproj", "{61AED80D-4E3E-49F7-8416-7FDA46801931}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Costo.Domain", "Costo.Domain\Costo.Domain.csproj", "{61AED80D-4E3E-49F7-8416-7FDA46801931}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Costo.Infrastructure", "Costo.Infrastructure\Costo.Infrastructure.csproj", "{B46F6012-821F-4E6C-A688-697A84007AC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Costo.Infrastructure", "Costo.Infrastructure\Costo.Infrastructure.csproj", "{B46F6012-821F-4E6C-A688-697A84007AC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Costo.CommandQuery", "Costo.CommandQuery\Costo.CommandQuery.csproj", "{C6AF5DC5-68B0-46DB-90A9-49FA499DA470}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Costo.CommandQuery", "Costo.CommandQuery\Costo.CommandQuery.csproj", "{C6AF5DC5-68B0-46DB-90A9-49FA499DA470}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cost.Contracts", "Cost.Contracts\Cost.Contracts.csproj", "{50553D9E-16D2-4206-8B5E-FF2A4F48A32E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cost.Contracts", "Cost.Contracts\Cost.Contracts.csproj", "{50553D9E-16D2-4206-8B5E-FF2A4F48A32E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Costo.Common", "Costo.Common\Costo.Common.csproj", "{84428F53-340B-48E9-95C9-273638FE66A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{50553D9E-16D2-4206-8B5E-FF2A4F48A32E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50553D9E-16D2-4206-8B5E-FF2A4F48A32E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50553D9E-16D2-4206-8B5E-FF2A4F48A32E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84428F53-340B-48E9-95C9-273638FE66A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84428F53-340B-48E9-95C9-273638FE66A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84428F53-340B-48E9-95C9-273638FE66A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84428F53-340B-48E9-95C9-273638FE66A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

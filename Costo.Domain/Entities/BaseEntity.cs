@@ -9,6 +9,13 @@ namespace Costo.Domain.Entities
     {
         [Key]
         public virtual Guid Id { get; protected set; } = Guid.NewGuid();
+        /// <summary>
+        /// Create date for audit data;
+        /// </summary>
         public virtual DateTime CreateDate { get; protected set; } = DateTime.Now;
+        /// <summary>
+        /// Update date for audit data;
+        /// </summary>
+        public virtual DateTime UpdateDate { get; protected set; }
     }
 }

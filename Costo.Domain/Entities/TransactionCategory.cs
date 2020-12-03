@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Costo.Common.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Costo.Domain.Entities
 {
-    public class SavingsGoal : SoftDeleteEntity
+    public class TransactionCategory : BaseEntity
     {
         /// <summary>
         /// Gets or sets name
@@ -17,13 +18,13 @@ namespace Costo.Domain.Entities
         public String Description { get; protected set; }
 
         /// <summary>
-        /// Gets or sets goal value
+        /// Gets or sets icon
         /// </summary>
-        public Decimal GoalValue { get; protected set; }
+        public Icon Icon { get; protected set; }
 
         /// <summary>
-        /// Gets or sets actual value
+        /// Gets or sets sub categories
         /// </summary>
-        public Decimal Value { get; protected set; }
+        public ICollection<TransactionCategory> SubCategories { get; protected set; }
     }
 }
