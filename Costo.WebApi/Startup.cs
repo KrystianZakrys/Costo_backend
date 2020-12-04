@@ -1,4 +1,3 @@
-using Costo.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -17,7 +16,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Swashbuckle;
 using MediatR;
-using Costo.CommandQuery.Query.TransactionsCategory;
+using Costo.CommandQuery.Queries;
+using Costo.Infrastructure;
+using Costo.Infrastructure.Repositories;
 
 namespace Costo.WebApi
 {
@@ -39,7 +40,11 @@ namespace Costo.WebApi
             services.AddDbContext<CostoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                b => b.MigrationsAssembly("Costo.Infrastructure")));
 
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<ITransactionCategoryRepository, TransactionCategoryRepository>();
+
             services.AddMediatR(typeof(GetTransactionCategoriesQuery).GetTypeInfo().Assembly);
+
             services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin()));
 
             services.AddSwaggerGen(c =>

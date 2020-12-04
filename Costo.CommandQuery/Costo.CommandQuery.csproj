@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Command\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Cost.Contracts\Cost.Contracts.csproj" />
     <ProjectReference Include="..\Costo.Infrastructure\Costo.Infrastructure.csproj" />
   </ItemGroup>

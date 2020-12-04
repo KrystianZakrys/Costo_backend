@@ -1,5 +1,7 @@
 ﻿using Cost.Contracts.Dto;
-using Costo.CommandQuery.Query.TransactionsCategory;
+using Costo.CommandQuery.Queries;
+using Costo.CommandQuery.Handlers;
+using Costo.CommandQuery.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,8 +24,39 @@ namespace Costo.WebApi.Controllers
             this.mediator = mediator;
         }
 
+        /// <summary>
+        /// Gets all transaction categories
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TransactionCategoryDto>>> Get()
         => Ok(await mediator.Send(new GetTransactionCategoriesQuery(), CancellationToken.None));
+
+        /// <summary>
+        /// Adds new transaction category
+        /// </summary>
+        /// <param name="transactionCategoryDto">data <seealso cref="TransactionCategoryDto"/></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<ActionResult<TransactionCategoryDto>> Post(TransactionCategoryDto transactionCategoryDto)
+            => Ok(await mediator.Send(new AddTransactionCategoryCommand(transactionCategoryDto), CancellationToken.None));
+
+        /// <summary>
+        /// Updates existing transaction category
+        /// </summary>
+        /// <param name="transactionCategoryDto">data <seealso cref="TransactionCategoryDto"/></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
+        public async Task<ActionResult<TransactionCategoryDto>> Put(TransactionCategoryDto transactionCategoryDto)
+            => Ok(await mediator.Send(new UpdateTransactionCategoryCommand(transactionCategoryDto), CancellationToken.None));
+
+        /// <summary>
+        /// Deletes transaction category
+        /// </summary>
+        /// <param name="id">transaction category identifier</param>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<TransactionCategoryDto>> Delete(Guid id)
+            => Ok(await mediator.Send(new DeleteTransactionCategoryCommand(id), CancellationToken.None));
     }
 }

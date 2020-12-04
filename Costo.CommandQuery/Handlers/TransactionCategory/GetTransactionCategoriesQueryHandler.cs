@@ -8,8 +8,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using Costo.CommandQuery.Queries;
 
-namespace Costo.CommandQuery.Query.TransactionsCategory
+namespace Costo.CommandQuery.Handlers
 {
     public class GetTransactionCategoriesQueryHandler : IQueryHandler<GetTransactionCategoriesQuery, IEnumerable<TransactionCategoryDto>>
     {

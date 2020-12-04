@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Costo.CommandQuery.Query.TransactionsCategory
+namespace Costo.CommandQuery.Queries
 {
     /// <summary>
     /// Query for employee implementing <seealso cref="IQuery{TResult}"/>
