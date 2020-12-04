@@ -47,8 +47,8 @@ namespace Costo.WebApi.Controllers
         /// <param name="transactionCategoryDto">data <seealso cref="TransactionCategoryDto"/></param>
         /// <returns></returns>
         [HttpPut("{id}")]
-        public async Task<ActionResult<TransactionCategoryDto>> Put(TransactionCategoryDto transactionCategoryDto)
-            => Ok(await mediator.Send(new UpdateTransactionCategoryCommand(transactionCategoryDto), CancellationToken.None));
+        public async Task<ActionResult<TransactionCategoryDto>> Put(Guid id, TransactionCategoryDto transactionCategoryDto)
+            => Ok(await mediator.Send(new UpdateTransactionCategoryCommand(id, transactionCategoryDto), CancellationToken.None));
 
         /// <summary>
         /// Deletes transaction category

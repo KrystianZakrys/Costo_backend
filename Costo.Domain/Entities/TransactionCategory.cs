@@ -1,7 +1,8 @@
 ﻿using Costo.Common.Enums;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel.DataAnnotations.Schema;
+using Costo.Common.Extensions;
 
 namespace Costo.Domain.Entities
 {
@@ -20,11 +21,20 @@ namespace Costo.Domain.Entities
         /// <summary>
         /// Gets or sets icon
         /// </summary>
+        [NotMapped]
         public Icon Icon { get; protected set; }
+
+        [Column("Icon")]
+        public string IconString
+        {
+            get { return Icon.ToString(); }
+            protected set { Icon = value.ParseEnum<Icon>(); }
+        }
 
         /// <summary>
         /// Gets or sets sub categories
         /// </summary>
+        [Column("ParentCategory")]
         public ICollection<TransactionCategory> SubCategories { get; protected set; }
 
         public static TransactionCategory Create(string name, string description, Icon icon)
@@ -35,6 +45,23 @@ namespace Costo.Domain.Entities
                 Description = description,
                 Icon = icon
             };
+        }
+
+        public void Update(String name, String description, Icon icon)
+        {
+            Name = name;
+            Description = description;
+            Icon = icon;
+        }
+
+        public void Update(TransactionCategory transactionCategory)
+        {
+
+            Name = transactionCategory.Name;
+            Description = transactionCategory.Description;
+            Icon = transactionCategory.Icon;
+            SubCategories = transactionCategory.SubCategories;
+                
         }
     }
 }

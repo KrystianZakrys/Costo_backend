@@ -1,8 +1,8 @@
 ﻿using Costo.Common.Enums;
+using Costo.Common.Extensions;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+
 
 namespace Costo.Domain.Entities
 {
@@ -17,8 +17,15 @@ namespace Costo.Domain.Entities
         /// <summary>
         /// Gets or sets transaction type
         /// </summary>
+        [NotMapped]
         public TransactionType TransactionType { get; protected set; }
 
+        [Column("TransactionType")]
+        public String TransactionTypeString
+        {
+            get { return TransactionType.ToString(); }
+            protected set { TransactionType = value.ParseEnum<TransactionType>(); }
+        }
 
         /// <summary>
         /// Gets or sets payment date.

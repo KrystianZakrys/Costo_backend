@@ -1,4 +1,5 @@
 ﻿using Costo.Common.Enums;
+using Costo.Common.Extensions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -27,12 +28,29 @@ namespace Costo.Domain.Entities
         /// <summary>
         /// Gets or sets account type.
         /// </summary>
+        [NotMapped]
         public BankAccountType AccountType { get; protected set; }
 
+        [Column("AccountType")]
+        public String AccountTypeString
+        {
+            get { return AccountType.ToString(); }
+            set { AccountType = value.ParseEnum<BankAccountType>(); }
+        }
+
         /// <summary>
-        /// Gets or sets icon.
+        /// Gets or sets icon
         /// </summary>
+        [NotMapped]
         public Icon Icon { get; protected set; }
+
+        [Column("Icon")]
+        public string IconString
+        {
+            get { return Icon.ToString(); }
+            protected set { Icon = value.ParseEnum<Icon>(); }
+        }
+
 
         /// <summary>
         /// Gets or sets transactions.
