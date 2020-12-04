@@ -1,5 +1,4 @@
 ﻿using Cost.Contracts.Dto;
-using Costo.CommandQuery.Query.TransactionsCategory;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +22,7 @@ namespace Costo.WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TransactionCategoryDto>>> Get()
-        => Ok(await mediator.Send(new GetTransactionCategoriesQuery(), CancellationToken.None));
+        public async Task<IEnumerable<TransactionCategoryDto>> Get()
+        => Ok(await mediator.Send(new Query(), CancellationToken.None));
     }
 }
