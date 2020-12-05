@@ -51,12 +51,11 @@ namespace Costo.Infrastructure.Repositories
         public async Task<bool> Delete(Guid id)
         {
             var entity = await dbContext.TransactionCategories.SingleOrDefaultAsync(x => x.Id == id);
-
             if(entity != null)
             {
                 dbContext.TransactionCategories.Remove(entity);
                 return true;
-            }
+            }            
             return false;
         }
     }

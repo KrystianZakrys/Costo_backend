@@ -42,5 +42,24 @@ namespace Costo.Domain.Entities
         /// </summary>
         public virtual TransactionCategory TransactionCategory { get; protected set; }
 
+        public static Transaction Create(decimal value, TransactionType transactionType, DateTime paymentDate, BankAccount bankAccount, TransactionCategory transactionCategory)
+        {
+            return new Transaction()
+            {
+                Value = value,
+                TransactionType = transactionType,
+                PaymentDate = paymentDate,
+                BankAccount = bankAccount,
+                TransactionCategory = transactionCategory
+            };
+        }
+
+        public void Update(decimal value, TransactionType transactionType, DateTime paymentDate)
+        {
+            Value = value;
+            TransactionType = transactionType;
+            PaymentDate = paymentDate;            
+        }
+
     }
 }

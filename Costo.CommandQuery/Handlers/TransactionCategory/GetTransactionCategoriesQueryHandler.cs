@@ -1,12 +1,9 @@
 ﻿using Cost.Contracts.Dto;
 using Costo.Infrastructure.Query;
 using Costo.Infrastructure.Repositories;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Costo.CommandQuery.Queries;
 
@@ -29,12 +26,8 @@ namespace Costo.CommandQuery.Handlers
                Name = x.Name,
                Description = x.Description,
                Icon = x.Icon,
-               SubCategories = x.SubCategories?.Select(y => new TransactionCategoryDto()
-               {
-                   Name = y.Name,
-                   Description = y.Description,
-                   Icon = y.Icon
-               }).ToList()
+               SubCategories = x.SubCategories?.Select(y => y.Id).ToList(),
+               Color = x.Color
             });
         }
     }

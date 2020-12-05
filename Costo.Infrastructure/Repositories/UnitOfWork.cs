@@ -8,6 +8,9 @@ namespace Costo.Infrastructure.Repositories
     {
         private readonly CostoContext costoContext;
         private ITransactionCategoryRepository transactionCategoryRepository;
+        private IBankAccountRepository bankAccountRepository;
+        private ISavingsGoalRepository savingsGoalRepository;
+        private ITransactionRepository transactionRepository;
 
         public UnitOfWork(CostoContext costoContext)
         {
@@ -17,6 +20,19 @@ namespace Costo.Infrastructure.Repositories
         public ITransactionCategoryRepository TransactionCategoryRepository
         {
             get { return transactionCategoryRepository ?? new TransactionCategoryRepository(costoContext); }
+        }
+
+        public IBankAccountRepository BankAccountRepository
+        {
+            get { return BankAccountRepository ?? new BankAccountRepository(costoContext); }
+        }
+        public ISavingsGoalRepository SavingsGoalRepository
+        {
+            get { return savingsGoalRepository ?? new SavingsGoalRepository(costoContext); }
+        }
+        public ITransactionRepository TransactionRepository
+        {
+            get { return transactionRepository ?? new TransactionRepository(costoContext); }
         }
 
         public void Commit()

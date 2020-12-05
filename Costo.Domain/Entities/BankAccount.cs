@@ -66,7 +66,7 @@ namespace Costo.Domain.Entities
         /// <param name="accountType"></param>
         /// <param name="icon"></param>
         /// <returns></returns>
-        public BankAccount Create(String name, String description, Decimal balance, BankAccountType accountType, Icon icon)
+        public static BankAccount Create(String name, String description, Decimal balance, BankAccountType accountType, Icon icon)
         {
             return new BankAccount()
             {
@@ -74,7 +74,7 @@ namespace Costo.Domain.Entities
                 Description = description,
                 Balance = balance,
                 AccountType = accountType,
-                Icon = Icon
+                Icon = icon
             };
         }
 

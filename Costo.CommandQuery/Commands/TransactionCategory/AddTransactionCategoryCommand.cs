@@ -12,11 +12,13 @@ namespace Costo.CommandQuery.Commands
         public String Name { get; set; }
         public String Description { get; set; }
         public Icon Icon { get; set; }
+        public UIColor Color { get; set; }
         public AddTransactionCategoryCommand(TransactionCategoryDto transactionCategoryDto)
         {
             Name = transactionCategoryDto.Name;
             Description = transactionCategoryDto.Description;
             Icon = transactionCategoryDto.Icon;
+            Color = transactionCategoryDto.Color;
         }
     }
 }

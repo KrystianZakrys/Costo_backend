@@ -5,10 +5,10 @@ using System.Text;
 
 namespace Costo.CommandQuery.Commands
 {
-    public class DeleteBankAccountCommand : CommandBase<bool>
+    public class DeleteTransactionCommand : CommandBase<bool>
     {
         public new Guid Id { get; set; }
-        public DeleteBankAccountCommand(Guid id)
+        public DeleteTransactionCommand(Guid id)
         {
             Id = id;
         }

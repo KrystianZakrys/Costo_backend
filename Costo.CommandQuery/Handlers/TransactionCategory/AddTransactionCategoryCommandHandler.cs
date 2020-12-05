@@ -22,7 +22,7 @@ namespace Costo.CommandQuery.Handlers
 
         public async Task<bool> Handle(AddTransactionCategoryCommand request, CancellationToken cancellationToken)
         {
-            var transactionCategory = TransactionCategory.Create(request.Name, request.Description, request.Icon);
+            var transactionCategory = TransactionCategory.Create(request.Name, request.Description, request.Icon, request.Color);
             try
             {
                 var result = await unitOfWork.TransactionCategoryRepository.Add(transactionCategory);

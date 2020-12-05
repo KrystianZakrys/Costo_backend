@@ -4,14 +4,16 @@ using Costo.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Costo.Infrastructure.Migrations
 {
     [DbContext(typeof(CostoContext))]
-    partial class CostoContextModelSnapshot : ModelSnapshot
+    [Migration("20201205154337_RestoreData")]
+    partial class RestoreData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

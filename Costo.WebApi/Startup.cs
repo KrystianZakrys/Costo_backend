@@ -40,8 +40,12 @@ namespace Costo.WebApi
             services.AddDbContext<CostoContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                b => b.MigrationsAssembly("Costo.Infrastructure")));
 
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ITransactionCategoryRepository, TransactionCategoryRepository>();
+            services.AddScoped<IBankAccountRepository, BankAccountRepository>();
+            services.AddScoped<ISavingsGoalRepository, SavingsGoalRepository>();
+            services.AddScoped<ITransactionRepository, TransactionRepository>();
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddMediatR(typeof(GetTransactionCategoriesQuery).GetTypeInfo().Assembly);
 

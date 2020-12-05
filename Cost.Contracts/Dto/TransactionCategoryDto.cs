@@ -10,6 +10,7 @@ namespace Cost.Contracts.Dto
         public String Name { get; set; }
         public String Description { get; set; }
         public Icon Icon { get; set; }
-        public ICollection<TransactionCategoryDto> SubCategories { get; set; }
+        public UIColor Color { get; set; }
+        public ICollection<Guid> SubCategories { get; set; }
     }
 }

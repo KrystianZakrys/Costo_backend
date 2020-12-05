@@ -4,7 +4,12 @@ using System.Text;
 
 namespace Cost.Contracts.Dto
 {
-    class SavingsGoalDto
+    public class SavingsGoalDto
     {
+        public String Name { get; set; }
+        public String Description { get; set; }
+        public decimal GoalValue { get; set; }
+        public decimal Value { get; set; }
+
     }
 }

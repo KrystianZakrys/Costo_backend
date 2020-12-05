@@ -23,7 +23,7 @@ namespace Costo.CommandQuery.Handlers
             {
                 var entity = await unitOfWork.TransactionCategoryRepository.GetCategory(request.Id);
 
-                entity.Update(request.Name,request.Description, request.Icon);
+                entity.Update(request.Name,request.Description, request.Icon, request.Color);
 
                 var result = await unitOfWork.TransactionCategoryRepository.Update(entity);
                 unitOfWork.Commit();

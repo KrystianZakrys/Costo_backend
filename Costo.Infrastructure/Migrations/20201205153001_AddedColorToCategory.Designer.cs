@@ -4,14 +4,16 @@ using Costo.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Costo.Infrastructure.Migrations
 {
     [DbContext(typeof(CostoContext))]
-    partial class CostoContextModelSnapshot : ModelSnapshot
+    [Migration("20201205153001_AddedColorToCategory")]
+    partial class AddedColorToCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -163,9 +165,9 @@ namespace Costo.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("66b251e2-5e24-4651-98ba-56e86487eb27"),
+                            Id = new Guid("961ce142-c72c-4812-9536-e7da1e2501b4"),
                             ColorString = "Blue",
-                            CreateDate = new DateTime(2020, 12, 5, 16, 43, 36, 737, DateTimeKind.Local).AddTicks(9944),
+                            CreateDate = new DateTime(2020, 12, 5, 16, 30, 0, 553, DateTimeKind.Local).AddTicks(4870),
                             Description = "...",
                             IconString = "Money",
                             Name = "Wypłata",
@@ -173,9 +175,9 @@ namespace Costo.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("65176457-697f-4d37-91d7-81737f355ad7"),
+                            Id = new Guid("d507dd46-18b9-4579-ab0e-aa33c74cf5e0"),
                             ColorString = "Blue",
-                            CreateDate = new DateTime(2020, 12, 5, 16, 43, 36, 741, DateTimeKind.Local).AddTicks(2888),
+                            CreateDate = new DateTime(2020, 12, 5, 16, 30, 0, 557, DateTimeKind.Local).AddTicks(1438),
                             Description = "...",
                             IconString = "Money",
                             Name = "Przychód",
@@ -183,9 +185,9 @@ namespace Costo.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c36e5b1c-54ee-40ad-8134-2557919ab06a"),
+                            Id = new Guid("5f032030-a767-4666-a5ff-09828b106ee3"),
                             ColorString = "Blue",
-                            CreateDate = new DateTime(2020, 12, 5, 16, 43, 36, 741, DateTimeKind.Local).AddTicks(2920),
+                            CreateDate = new DateTime(2020, 12, 5, 16, 30, 0, 557, DateTimeKind.Local).AddTicks(1492),
                             Description = "...",
                             IconString = "Money",
                             Name = "Wydatek",
@@ -193,9 +195,9 @@ namespace Costo.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e58260c4-cc20-43ee-af5a-d912280d02c1"),
+                            Id = new Guid("d76e95dd-9d10-45fc-b90b-b84877e3cdbe"),
                             ColorString = "Blue",
-                            CreateDate = new DateTime(2020, 12, 5, 16, 43, 36, 741, DateTimeKind.Local).AddTicks(2925),
+                            CreateDate = new DateTime(2020, 12, 5, 16, 30, 0, 557, DateTimeKind.Local).AddTicks(1498),
                             Description = "...",
                             IconString = "Money",
                             Name = "Zakupy spożywcze",
@@ -203,9 +205,9 @@ namespace Costo.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("59a4b180-eff9-4fbd-93f2-01f6c320fdf0"),
+                            Id = new Guid("a2ed6de7-be3f-4982-9072-3c6f908e3ab2"),
                             ColorString = "Blue",
-                            CreateDate = new DateTime(2020, 12, 5, 16, 43, 36, 741, DateTimeKind.Local).AddTicks(2929),
+                            CreateDate = new DateTime(2020, 12, 5, 16, 30, 0, 557, DateTimeKind.Local).AddTicks(1502),
                             Description = "...",
                             IconString = "Money",
                             Name = "Transport",
@@ -213,9 +215,9 @@ namespace Costo.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("371a865a-b34f-44d0-b121-3529142fe91c"),
+                            Id = new Guid("86c31316-975b-42af-a348-289b47381e65"),
                             ColorString = "Blue",
-                            CreateDate = new DateTime(2020, 12, 5, 16, 43, 36, 741, DateTimeKind.Local).AddTicks(2933),
+                            CreateDate = new DateTime(2020, 12, 5, 16, 30, 0, 557, DateTimeKind.Local).AddTicks(1506),
                             Description = "...",
                             IconString = "Money",
                             Name = "Zdrowie",
@@ -223,9 +225,9 @@ namespace Costo.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("abe643b0-b344-412c-898a-3c0ff586c433"),
+                            Id = new Guid("decda3d0-7055-43c9-b55f-6b19c77c78ca"),
                             ColorString = "Blue",
-                            CreateDate = new DateTime(2020, 12, 5, 16, 43, 36, 741, DateTimeKind.Local).AddTicks(2936),
+                            CreateDate = new DateTime(2020, 12, 5, 16, 30, 0, 557, DateTimeKind.Local).AddTicks(1510),
                             Description = "...",
                             IconString = "Money",
                             Name = "Rozrywka",
@@ -233,9 +235,9 @@ namespace Costo.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fb9fa1d3-408d-45e0-9632-d5491df0e7ed"),
+                            Id = new Guid("22d028f4-57fd-44ad-b8ee-8c75bbd47e31"),
                             ColorString = "Blue",
-                            CreateDate = new DateTime(2020, 12, 5, 16, 43, 36, 741, DateTimeKind.Local).AddTicks(2940),
+                            CreateDate = new DateTime(2020, 12, 5, 16, 30, 0, 557, DateTimeKind.Local).AddTicks(1514),
                             Description = "...",
                             IconString = "Money",
                             Name = "Dom",
@@ -243,9 +245,9 @@ namespace Costo.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5999e27f-1e51-4b49-a842-4acd5d10c3f4"),
+                            Id = new Guid("a8f93cc5-79bb-4150-b562-bd20cab17f52"),
                             ColorString = "Blue",
-                            CreateDate = new DateTime(2020, 12, 5, 16, 43, 36, 741, DateTimeKind.Local).AddTicks(2953),
+                            CreateDate = new DateTime(2020, 12, 5, 16, 30, 0, 557, DateTimeKind.Local).AddTicks(1529),
                             Description = "...",
                             IconString = "Money",
                             Name = "Restauracje",

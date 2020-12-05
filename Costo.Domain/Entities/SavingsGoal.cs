@@ -27,6 +27,25 @@ namespace Costo.Domain.Entities
         /// Gets or sets actual value
         /// </summary>
         [Column(TypeName = "money")]
-        public Decimal Value { get; protected set; }
+        public Decimal Value { get; protected set; } = 0;
+
+        public static SavingsGoal Create(String name, String description, decimal goalValue, decimal value)
+        {
+            return new SavingsGoal()
+            {
+                Name = name,
+                Description = description,
+                GoalValue = goalValue,
+                Value = value
+            };
+        }
+
+        public void Update(String name, String description, decimal goalValue, decimal value)
+        {
+            Name = name;
+            Description = description;
+            GoalValue = goalValue;
+            Value = value;            
+        }
     }
 }

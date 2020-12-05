@@ -8,6 +8,8 @@ using Cost.Contracts.Dto;
 using Costo.CommandQuery.Queries;
 using Costo.CommandQuery.Handlers;
 using Costo.CommandQuery.Commands;
+using MediatR;
+using System.Threading;
 
 namespace Costo.WebApi.Controllers
 {
@@ -17,7 +19,7 @@ namespace Costo.WebApi.Controllers
     {
         private readonly IMediator mediator;
 
-        public TransactionsCategoryController(IMediator mediator)
+        public SavingsGoalController(IMediator mediator)
         {
             this.mediator = mediator;
         }
@@ -27,26 +29,26 @@ namespace Costo.WebApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TransactionCategoryDto>>> Get()
-        => Ok(await mediator.Send(new GetTransactionCategoriesQuery(), CancellationToken.None));
+        public async Task<ActionResult<IEnumerable<SavingsGoalDto>>> Get()
+        => Ok(await mediator.Send(new GetSavingsGoalsQuery(), CancellationToken.None));
 
         /// <summary>
         /// Adds new transaction category
         /// </summary>
-        /// <param name="transactionCategoryDto">data <seealso cref="TransactionCategoryDto"/></param>
+        /// <param name="SavingsGoalDto">data <seealso cref="SavingsGoalDto"/></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<ActionResult<TransactionCategoryDto>> Post(TransactionCategoryDto transactionCategoryDto)
-            => Ok(await mediator.Send(new AddTransactionCategoryCommand(transactionCategoryDto), CancellationToken.None));
+        public async Task<ActionResult<SavingsGoalDto>> Post(SavingsGoalDto SavingsGoalDto)
+            => Ok(await mediator.Send(new AddSavingsGoalCommand(SavingsGoalDto), CancellationToken.None));
 
         /// <summary>
         /// Updates existing transaction category
         /// </summary>
-        /// <param name="transactionCategoryDto">data <seealso cref="TransactionCategoryDto"/></param>
+        /// <param name="SavingsGoalDto">data <seealso cref="SavingsGoalDto"/></param>
         /// <returns></returns>
         [HttpPut("{id}")]
-        public async Task<ActionResult<TransactionCategoryDto>> Put(Guid id, TransactionCategoryDto transactionCategoryDto)
-            => Ok(await mediator.Send(new UpdateTransactionCategoryCommand(id, transactionCategoryDto), CancellationToken.None));
+        public async Task<ActionResult<SavingsGoalDto>> Put(Guid id, SavingsGoalDto SavingsGoalDto)
+            => Ok(await mediator.Send(new UpdateSavingsGoalCommand(id, SavingsGoalDto), CancellationToken.None));
 
         /// <summary>
         /// Deletes transaction category
@@ -54,7 +56,7 @@ namespace Costo.WebApi.Controllers
         /// <param name="id">transaction category identifier</param>
         /// <returns></returns>
         [HttpDelete("{id}")]
-        public async Task<ActionResult<TransactionCategoryDto>> Delete(Guid id)
-            => Ok(await mediator.Send(new DeleteTransactionCategoryCommand(id), CancellationToken.None));
+        public async Task<ActionResult<SavingsGoalDto>> Delete(Guid id)
+            => Ok(await mediator.Send(new DeleteSavingsGoalCommand(id), CancellationToken.None));
     }
 }

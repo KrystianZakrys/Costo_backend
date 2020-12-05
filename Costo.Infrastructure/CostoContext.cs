@@ -27,15 +27,15 @@ namespace Costo.Infrastructure
         {
             modelBuilder.Entity<TransactionCategory>().HasData(new TransactionCategory[]
            {
-                TransactionCategory.Create("Wypłata","...",Icon.Money),
-                TransactionCategory.Create("Przychód","...",Icon.Money),
-                TransactionCategory.Create("Wydatek","...",Icon.Money),
-                TransactionCategory.Create("Zakupy spożywcze","...",Icon.Money),
-                TransactionCategory.Create("Transport","...",Icon.Money),
-                TransactionCategory.Create("Zdrowie","...",Icon.Money),
-                TransactionCategory.Create("Rozrywka","...",Icon.Money),
-                TransactionCategory.Create("Dom","...",Icon.Money),
-                TransactionCategory.Create("Restauracje","...",Icon.Money),
+                TransactionCategory.Create("Wypłata","...",Icon.Money, UIColor.Blue),
+                TransactionCategory.Create("Przychód","...",Icon.Money, UIColor.Blue),
+                TransactionCategory.Create("Wydatek","...",Icon.Money, UIColor.Blue),
+                TransactionCategory.Create("Zakupy spożywcze","...",Icon.Money, UIColor.Blue),
+                TransactionCategory.Create("Transport","...",Icon.Money, UIColor.Blue),
+                TransactionCategory.Create("Zdrowie","...",Icon.Money, UIColor.Blue),
+                TransactionCategory.Create("Rozrywka","...",Icon.Money, UIColor.Blue),
+                TransactionCategory.Create("Dom","...",Icon.Money, UIColor.Blue),
+                TransactionCategory.Create("Restauracje","...",Icon.Money, UIColor.Blue),
            });
 
         }

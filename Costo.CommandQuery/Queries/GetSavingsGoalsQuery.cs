@@ -3,9 +3,10 @@ using Costo.Infrastructure.Query;
 using System;
 using System.Collections.Generic;
 using System.Text;
+
 namespace Costo.CommandQuery.Queries
 {
-    public class GetBankAccountsQuery : IQuery<IEnumerable<BankAccountDto>>
+    public class GetSavingsGoalsQuery : IQuery<IEnumerable<SavingsGoalDto>>
     {
     }
 }

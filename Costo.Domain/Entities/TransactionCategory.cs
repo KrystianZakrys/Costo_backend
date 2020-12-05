@@ -31,27 +31,39 @@ namespace Costo.Domain.Entities
             protected set { Icon = value.ParseEnum<Icon>(); }
         }
 
+        [NotMapped]
+        public UIColor Color { get; protected set; }
+
+        [Column("Color")]
+        public string ColorString
+        {
+            get { return Color.ToString(); }
+            protected set { Color = value.ParseEnum<UIColor>(); }
+        }
+
         /// <summary>
         /// Gets or sets sub categories
         /// </summary>
         [Column("ParentCategory")]
         public ICollection<TransactionCategory> SubCategories { get; protected set; }
 
-        public static TransactionCategory Create(string name, string description, Icon icon)
+        public static TransactionCategory Create(string name, string description, Icon icon, UIColor color)
         {
             return new TransactionCategory()
             {
                 Name = name,
                 Description = description,
-                Icon = icon
+                Icon = icon,
+                Color = color
             };
         }
 
-        public void Update(String name, String description, Icon icon)
+        public void Update(String name, String description, Icon icon, UIColor color)
         {
             Name = name;
             Description = description;
             Icon = icon;
+            Color = color;
         }
 
         public void Update(TransactionCategory transactionCategory)
@@ -60,8 +72,8 @@ namespace Costo.Domain.Entities
             Name = transactionCategory.Name;
             Description = transactionCategory.Description;
             Icon = transactionCategory.Icon;
-            SubCategories = transactionCategory.SubCategories;
-                
+            Color = transactionCategory.Color;
+            SubCategories = transactionCategory.SubCategories;                
         }
     }
 }
