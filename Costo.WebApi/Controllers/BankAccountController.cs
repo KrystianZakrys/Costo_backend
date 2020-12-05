@@ -1,9 +1,15 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Cost.Contracts.Dto;
+using Costo.CommandQuery.Queries;
+using Costo.CommandQuery.Handlers;
+using Costo.CommandQuery.Commands;
+using System.Threading;
 
 namespace Costo.WebApi.Controllers
 {
@@ -13,44 +19,44 @@ namespace Costo.WebApi.Controllers
     {
         private readonly IMediator mediator;
 
-        public TransactionsCategoryController(IMediator mediator)
+        public BankAccountController(IMediator mediator)
         {
             this.mediator = mediator;
         }
 
         /// <summary>
-        /// Gets all transaction categories
+        /// Gets all bank account
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TransactionCategoryDto>>> Get()
-        => Ok(await mediator.Send(new GetTransactionCategoriesQuery(), CancellationToken.None));
+        public async Task<ActionResult<IEnumerable<BankAccountDto>>> Get()
+        => Ok(await mediator.Send(new GetBankAccountsQuery(), CancellationToken.None));
 
         /// <summary>
-        /// Adds new transaction category
+        /// Adds new bank account
         /// </summary>
-        /// <param name="transactionCategoryDto">data <seealso cref="TransactionCategoryDto"/></param>
+        /// <param name="BankAccountDto">data <seealso cref="BankAccountDto"/></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<ActionResult<TransactionCategoryDto>> Post(TransactionCategoryDto transactionCategoryDto)
-            => Ok(await mediator.Send(new AddTransactionCategoryCommand(transactionCategoryDto), CancellationToken.None));
+        public async Task<ActionResult<BankAccountDto>> Post(BankAccountDto BankAccountDto)
+            => Ok(await mediator.Send(new AddBankAccountCommand(BankAccountDto), CancellationToken.None));
 
         /// <summary>
-        /// Updates existing transaction category
+        /// Updates existing bank account
         /// </summary>
-        /// <param name="transactionCategoryDto">data <seealso cref="TransactionCategoryDto"/></param>
+        /// <param name="BankAccountDto">data <seealso cref="BankAccountDto"/></param>
         /// <returns></returns>
         [HttpPut("{id}")]
-        public async Task<ActionResult<TransactionCategoryDto>> Put(Guid id, TransactionCategoryDto transactionCategoryDto)
-            => Ok(await mediator.Send(new UpdateTransactionCategoryCommand(id, transactionCategoryDto), CancellationToken.None));
+        public async Task<ActionResult<BankAccountDto>> Put(Guid id, BankAccountDto BankAccountDto)
+            => Ok(await mediator.Send(new UpdateBankAccountCommand(id, BankAccountDto), CancellationToken.None));
 
         /// <summary>
-        /// Deletes transaction category
+        /// Deletes bank account
         /// </summary>
-        /// <param name="id">transaction category identifier</param>
+        /// <param name="id">bank account identifier</param>
         /// <returns></returns>
         [HttpDelete("{id}")]
-        public async Task<ActionResult<TransactionCategoryDto>> Delete(Guid id)
-            => Ok(await mediator.Send(new DeleteTransactionCategoryCommand(id), CancellationToken.None));
+        public async Task<ActionResult<BankAccountDto>> Delete(Guid id)
+            => Ok(await mediator.Send(new DeleteBankAccountCommand(id), CancellationToken.None));
     }
 }

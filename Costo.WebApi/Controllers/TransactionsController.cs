@@ -4,6 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Cost.Contracts.Dto;
+using Costo.CommandQuery.Queries;
+using Costo.CommandQuery.Handlers;
+using Costo.CommandQuery.Commands;
 
 namespace Costo.WebApi.Controllers
 {
